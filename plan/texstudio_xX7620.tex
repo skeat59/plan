@@ -1,0 +1,96 @@
+\documentclass [11pt]{report}
+
+\usepackage{fancyhdr}
+\usepackage [french]{babel}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{titlepic}
+\usepackage{boxedminipage}
+\usepackage{listings}
+\usepackage{minitoc}
+\usepackage{footmisc}
+\usepackage{color}
+\usepackage{graphicx}
+
+\usepackage{eso-pic}
+
+\makeatletter
+\newlength\@tempdim@x
+\newlength\@tempdim@y
+% structure des commandes :
+%   #1 = deplacement selon x
+%   #2 = deplacement selon y
+%   #3 = texte à mettre
+\newcommand\AtUpperLeftCorner[3]{%
+\begingroup
+\@tempdim@x=0cm
+\@tempdim@y=\paperheight
+\advance\@tempdim@x#1
+\advance\@tempdim@y-#2
+\put(\LenToUnit{\@tempdim@x},\LenToUnit{\@tempdim@y}){#3}%
+\endgroup
+}
+\newcommand\AtUpperRightCorner[3]{%
+\begingroup
+\@tempdim@x=\paperwidth
+\@tempdim@y=\paperheight
+\advance\@tempdim@x-#1
+\advance\@tempdim@y-#2
+\put(\LenToUnit{\@tempdim@x},\LenToUnit{\@tempdim@y}){#3}%
+\endgroup
+}
+\newcommand\AtLowerLeftCorner[3]{%
+\begingroup
+\@tempdim@x=0cm
+\@tempdim@y=0cm
+\advance\@tempdim@x#1
+\advance\@tempdim@y#2
+\put(\LenToUnit{\@tempdim@x},\LenToUnit{\@tempdim@y}){#3}%
+\endgroup
+}
+\newcommand\AtLowerRightCorner[3]{%
+\begingroup
+\@tempdim@x=\paperwidth
+\@tempdim@y=0cm
+\advance\@tempdim@x-#1
+\advance\@tempdim@y#2
+\put(\LenToUnit{\@tempdim@x},\LenToUnit{\@tempdim@y}){#3}%
+\endgroup
+}
+% ajout de texte ou d'images en haut à gauche, en haut à droite, etc.
+\AddToShipoutPicture{%
+\AtLowerRightCorner{3cm}{1cm}{\includegraphics[scale=0.20]{images/LogoGroupe.png}}% image en bas à droite
+}
+\makeatother
+
+\pagestyle{fancy}
+
+
+\begin{document}
+\begin{center}
+	\includegraphics[scale=0.43]{images/Logojeu.png}
+	 \\\vspace{20mm}
+	\textbf{\Huge \itshape Plan de Soutenance }
+	
+\end{center}	
+
+I-Rappel de la derni\`ere soutenance et site internet\\
+\indent II-Pr\'esentation des nouveaut\'es\\
+\indent \indent 1-Evolution du mode story\\
+\indent \indent 2-Les patterns du mode infini\\
+\indent \indent 3-Moteur Physique\\
+\indent \indent 4-le R\'eseau\\
+\indent \indent 5- Le son\\
+\indent \indent 6- L'\'Editeur de map\\
+\indent \indent 7-Version beta\\
+\indent III-Ce que nous allons faire pour la prochaine soutenance\\
+
+
+
+
+
+
+\end {document}
